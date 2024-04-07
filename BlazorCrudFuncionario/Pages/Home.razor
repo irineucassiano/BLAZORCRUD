@@ -1,0 +1,97 @@
+﻿@page "/"
+@using BlazorCrudFuncionario.Models;
+@inject IJSRuntime JSRuntime
+@inject BlazorCrudFuncionario.Services.IFuncionarioServices FuncionarioServices
+
+<PageTitle>Funcionarios</PageTitle>
+
+<h1>Lista de Funcionarios</h1>
+
+<a href="/create" class="btn btn-success">Cadastrar</a>
+
+<div style="float:right; width:40% ">
+    <div class="col-sm-5" style="float:left">
+        <input class="form-control" type="text" placeholder="Busca por nome" @bind="SearchString" />
+    </div>
+
+    <div class="col-sm-5" style="float:right">
+        <button class="btn btn-success" @onclick="FilterNome">Buscar</button>
+    </div>
+</div>
+
+<table class="table table-responsive table-striped">
+    <thead>
+
+
+        <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Setor</th>
+            <th>Salario</th>
+            <th>Adimissão</th>
+            <th></th>
+        </tr>
+    </thead>
+
+        <tbody>
+            @if(funcionarios is not null && funcionarios.Count > 0)
+            {
+                foreach(var item in funcionarios)
+                {
+                    <tr>
+                        <td>@item.Nome</td>
+                        <td>@item.Cargo</td>
+                        <td>@item.Setor</td>
+                        <td>@item.Salario</td>
+                        <td>@item.Admissao</td>
+                        <td>
+                        <a href="/update/@item.Id" class="btn btn-warning">Atualizar</a>
+                        <button class="btn btn-danger" @onclick="async () => await DeleteFuncionario(item.Id)">Deletar</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+
+    
+</table>
+
+
+
+@code{
+    List<Funcionario> funcionarios = new(); //cria uma lista de funcionarios para listar
+    protected string SearchString {get; set;}
+
+    protected override async Task OnInitializedAsync(){
+        funcionarios = await FuncionarioServices.FindAll(); //busca todos os funcionarios no db a atribui para a lista
+    }
+
+    //cria filtro por nome
+    protected async Task FilterNome(){
+        await FuncionarioServices.FindAll();
+
+        if(SearchString is not null)
+        {
+            funcionarios = funcionarios.Where(x => x.Nome.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1).ToList();
+        }
+    }
+
+
+    //cria botao de deletar
+
+    public async Task DeleteFuncionario(Guid id){
+        bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Tem certeza que deseja deletar? A ação é irreversivel");
+
+        if(confirmed is false)
+        {
+            return;
+        } else
+        {
+            var funcionario = await FuncionarioServices.GetById(id);
+            await FuncionarioServices.DeleteFuncionario(funcionario);
+
+            funcionarios = await FuncionarioServices.FindAll();
+            StateHasChanged();
+        }
+    }
+}
