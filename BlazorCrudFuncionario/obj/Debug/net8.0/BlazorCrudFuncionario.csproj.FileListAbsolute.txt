@@ -1425,3 +1425,4 @@ C:\Users\netin\OneDrive\Documentos\Estudos tecnologia\programas c#\BlazorCrudFun
 C:\Users\netin\OneDrive\Documentos\Estudos tecnologia\programas c#\BlazorCrudFuncionario\BlazorCrudFuncionario\obj\Debug\net8.0\refint\BlazorCrudFuncionario.dll
 C:\Users\netin\OneDrive\Documentos\Estudos tecnologia\programas c#\BlazorCrudFuncionario\BlazorCrudFuncionario\obj\Debug\net8.0\BlazorCrudFuncionario.pdb
 C:\Users\netin\OneDrive\Documentos\Estudos tecnologia\programas c#\BlazorCrudFuncionario\BlazorCrudFuncionario\obj\Debug\net8.0\ref\BlazorCrudFuncionario.dll
+C:\Users\netin\OneDrive\Documentos\Estudos tecnologia\programas c#\BlazorCrudFuncionario\BlazorCrudFuncionario\obj\Debug\net8.0\BlazorCrudFuncionario.sourcelink.json

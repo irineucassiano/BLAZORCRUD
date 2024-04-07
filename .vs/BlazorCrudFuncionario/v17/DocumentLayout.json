@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\netin\\OneDrive\\Documentos\\Estudos tecnologia\\programas c#\\BlazorCrudFuncionario\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45D6E93B-A418-4D51-8392-C5BD62B1BF3F}|BlazorCrudFuncionario\\BlazorCrudFuncionario.csproj|c:\\users\\netin\\onedrive\\documentos\\estudos tecnologia\\programas c#\\blazorcrudfuncionario\\blazorcrudfuncionario\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D6E93B-A418-4D51-8392-C5BD62B1BF3F}|BlazorCrudFuncionario\\BlazorCrudFuncionario.csproj|solutionrelative:blazorcrudfuncionario\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\netin\\OneDrive\\Documentos\\Estudos tecnologia\\programas c#\\BlazorCrudFuncionario\\BlazorCrudFuncionario\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "BlazorCrudFuncionario\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\netin\\OneDrive\\Documentos\\Estudos tecnologia\\programas c#\\BlazorCrudFuncionario\\BlazorCrudFuncionario\\Pages\\Home.razor",
+              "RelativeToolTip": "BlazorCrudFuncionario\\Pages\\Home.razor",
+              "ViewState": "AQIAABsAAAAAAAAAAADwvysAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T23:04:33.688Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

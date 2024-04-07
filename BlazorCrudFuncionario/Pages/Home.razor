@@ -42,7 +42,7 @@
                         <td>@item.Nome</td>
                         <td>@item.Cargo</td>
                         <td>@item.Setor</td>
-                        <td>@item.Salario</td>
+                        <td>$@item.Salario</td>
                         <td>@item.Admissao</td>
                         <td>
                         <a href="/update/@item.Id" class="btn btn-warning">Atualizar</a>
@@ -80,7 +80,9 @@
     //cria botao de deletar
 
     public async Task DeleteFuncionario(Guid id){
-        bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Tem certeza que deseja deletar? A ação é irreversivel");
+        var funcionarioS = await FuncionarioServices.GetById(id);
+        bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm", $"Tem certeza que deseja deletar o funcionario: {funcionarioS.Nome}? A ação é irreversivel");
+        
 
         if(confirmed is false)
         {
